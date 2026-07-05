@@ -248,3 +248,39 @@ body {
         font-size: 24px;
     }
 }
+
+/* Стили для формы заявки */
+.landing-form {
+    max-width: 450px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.landing-form input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    color: #1a1a1a;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.landing-form input:focus {
+    border-color: #777777;
+}
+
+@media (max-width: 640px) {
+    .landing-form {
+        padding: 20px 15px;
+    }
+}
