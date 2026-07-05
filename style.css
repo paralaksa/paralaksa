@@ -322,3 +322,26 @@ body {
     opacity: 0.5;
     font-size: 0.9rem;
 }
+
+/* Стили для многострочного поля запроса */
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    font-family: inherit;
+    resize: vertical; /* Позволяет пользователю растягивать поле только по высоте */
+    transition: border-color 0.2s ease;
+}
+
+.form-group textarea:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
