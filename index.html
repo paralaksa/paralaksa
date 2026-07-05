@@ -153,23 +153,28 @@
             <p class="cta-subtitle">Запишитесь на бесплатный вводный разбор вашей ситуации.</p>
             
             <form action="https://api.web3forms.com/submit" method="POST" id="tg-form" class="landing-form">
-                <input type="hidden" name="access_key" value="f27ec89c-9a18-44d8-ac7f-e478bf74bbeb">
-                <input type="hidden" name="subject" value="Новая заявка с лендинга Паралакса!">
-                <input type="hidden" name="from_name" value="Система Паралакса">
-                
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Номер телефона / Ссылка на Telegram" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="business" placeholder="Ваш бизнес / Ниша" required>
-                </div>
-                
-                <button type="submit" class="btn btn-light" style="width: 100%; border: none; cursor: pointer; font-weight: 600;">Оставить заявку</button>
-                <div id="form-message" style="margin-top: 15px; font-weight: 600; text-align: center;"></div>
-            </form>
+    <input type="hidden" name="access_key" value="f27ec89c-9a18-44d8-ac7f-e478bf74bbeb">
+    <input type="hidden" name="subject" value="Новая заявка с лендинга Центра Системного Дизайна!">
+    <input type="hidden" name="from_name" value="Центр Системного Дизайна">
+    
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+    </div>
+    <div class="form-group">
+        <input type="tel" name="phone" placeholder="Номер телефона / Ссылка на Telegram" required>
+    </div>
+    <div class="form-group">
+        <input type="text" name="business" placeholder="Ваш бизнес / Ниша" required>
+    </div>
+    
+    <!-- Новое поле для свободного запроса -->
+    <div class="form-group">
+        <textarea name="message" placeholder="Ваш вопрос или описание ситуации (необязательно)" rows="4"></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-light" style="width: 100%; border: none; cursor: pointer; font-weight: 600;">Оставить заявку</button>
+    <div id="form-message" style="margin-top: 15px; font-weight: 600; text-align: center;"></div>
+</form>
         </div>
     </section>
 
