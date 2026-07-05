@@ -139,6 +139,45 @@
     </div>
 </section>
 
+<!-- Скрипт отправки данных без перезагрузки страницы -->
+<script>
+    const form = document.getElementById('tg-form');
+    const messageDiv = document.getElementById('form-message');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        messageDiv.textContent = 'Отправка...';
+        messageDiv.style.color = '#ffffff';
+
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        fetch(form.action, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            if (response.status == 200) {
+                messageDiv.textContent = 'Успешно! Я свяжусь с вами в ближайшее время.';
+                messageDiv.style.color = '#00ff88';
+                form.reset();
+            } else {
+                messageDiv.textContent = 'Что-то пошло не так. Попробуйте еще раз.';
+                messageDiv.style.color = '#ff4444';
+            }
+        })
+        .catch(error => {
+            messageDiv.textContent = 'Ошибка сети. Проверьте соединение.';
+            messageDiv.style.color = '#ff4444';
+        });
+    });
+</script>
+    
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Система Паралакса. Все права защищены.</p>
