@@ -285,3 +285,11 @@ body {
         padding: 20px 15px;
     }
 }
+
+/* Мобильная адаптация для новых блоков */
+@media (max-width: 768px) {
+    .reviews-grid, .formats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
