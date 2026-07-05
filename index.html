@@ -116,14 +116,28 @@
 
     <!-- Финальный призыв к действию -->
     <section id="cta-form" class="cta-section">
-        <div class="container-narrow">
-            <h2>Управляйте бизнесом из точки спокойствия</h2>
-            <p style="margin-bottom: 30px; opacity: 0.9;">Сделайте первый шаг к перепроектированию своей роли. Запишитесь на бесплатный вводный разбор вашей ситуации.</p>
+    <div class="container-narrow">
+        <h2>Управляйте бизнесом из точки спокойствия</h2>
+        <p style="margin-bottom: 30px; opacity: 0.9;">Запишитесь на бесплатный вводный разбор вашей ситуации.</p>
+        
+        <form action="https://formsubmit.co/ajax/ВАША_ПОЧТА@EMAIL.COM" method="POST" id="tg-form" class="landing-form">
+            <input type="hidden" name="_captcha" value="false"> <input type="hidden" name="_subject" value="Новая заявка с лендинга Паралакса!">
             
-            <!-- Замените ССЫЛКУ ниже на ваш Telegram, WhatsApp или форму -->
-            <a href="https://t.me/your_telegram_username" class="btn btn-light" target="_blank">Записаться в Telegram</a>
-        </div>
-    </section>
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" name="phone" placeholder="Номер телефона / Ссылка на Telegram" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="business" placeholder="Ваш бизнес / Ниша" required>
+            </div>
+            
+            <button type="submit" class="btn btn-light" style="width: 100%; border: none; cursor: pointer;">Оставить заявку</button>
+            <div id="form-message" style="margin-top: 15px; font-weight: 600;"></div>
+        </form>
+    </div>
+</section>
 
     <footer class="footer">
         <div class="container">
