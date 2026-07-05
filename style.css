@@ -294,36 +294,8 @@ body {
     margin-bottom: 20px;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 15px 20px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.2s ease;
-}
-
-.form-group input:focus {
-    border-color: rgba(255, 255, 255, 0.4);
-}
-
-.form-group input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
-}
-
-/* Подвал (Footer) */
-.footer {
-    padding: 40px 0;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    opacity: 0.5;
-    font-size: 0.9rem;
-}
-
-/* Стили для многострочного поля запроса */
+/* Стилизация всех полей ввода, включая textarea */
+.form-group input, 
 .form-group textarea {
     width: 100%;
     padding: 15px 20px;
@@ -334,14 +306,28 @@ body {
     font-size: 1rem;
     outline: none;
     font-family: inherit;
-    resize: vertical; /* Позволяет пользователю растягивать поле только по высоте */
     transition: border-color 0.2s ease;
 }
 
+.form-group textarea {
+    resize: vertical; /* Разрешаем растягивать только по вертикали */
+}
+
+.form-group input:focus,
 .form-group textarea:focus {
     border-color: rgba(255, 255, 255, 0.4);
 }
 
+.form-group input::placeholder,
 .form-group textarea::placeholder {
     color: rgba(255, 255, 255, 0.4);
+}
+
+/* Подвал (Footer) */
+.footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    opacity: 0.5;
+    font-size: 0.9rem;
 }
