@@ -114,14 +114,15 @@
         </div>
     </section>
 
-  <section id="cta-form" class="cta-section">
+  <!-- Финальный призыв к действию -->
+<section id="cta-form" class="cta-section">
     <div class="container-narrow">
         <h2>Управляйте бизнесом из точки спокойствия</h2>
         <p style="margin-bottom: 30px; opacity: 0.9;">Запишитесь на бесплатный вводный разбор вашей ситуации.</p>
         
-        <!-- Форма Web3Forms с вашим ключом -->
         <form action="https://api.web3forms.com/submit" method="POST" id="tg-form" class="landing-form">
-            <input type="hidden" name="access_key" value="f27ec89c-9a18-44d8-ac7f-e478bf74bbeb">
+            <!-- ВНИМАНИЕ: Сотрите текст ниже и вставьте ваш ключ от Web3Forms внутри кавычек -->
+            <input type="hidden" name="access_key" value=f27ec89c-9a18-44d8-ac7f-e478bf74bbeb>
             <input type="hidden" name="subject" value="Новая заявка с лендинга Паралакса!">
             <input type="hidden" name="from_name" value="Система Паралакса">
             
@@ -141,7 +142,7 @@
     </div>
 </section>
 
-<!-- Скрипт отправки данных -->
+<!-- Скрипт отправки данных без перезагрузки страницы -->
 <script>
     const form = document.getElementById('tg-form');
     const messageDiv = document.getElementById('form-message');
@@ -173,8 +174,9 @@
             }
         })
         .catch(error => {
-            messageDiv.textContent = 'Заявка отправлена!';
+            messageDiv.textContent = 'Заявка принята!';
             messageDiv.style.color = '#00ff88';
+            form.reset();
         });
     });
 </script>
