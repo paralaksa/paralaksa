@@ -114,14 +114,16 @@
         </div>
     </section>
 
-    <!-- Финальный призыв к действию -->
-    <section id="cta-form" class="cta-section">
+  <section id="cta-form" class="cta-section">
     <div class="container-narrow">
         <h2>Управляйте бизнесом из точки спокойствия</h2>
         <p style="margin-bottom: 30px; opacity: 0.9;">Запишитесь на бесплатный вводный разбор вашей ситуации.</p>
         
-        <form action="https://formsubmit.co/ajax/paralaksa@yandex.ru" method="POST" id="tg-form" class="landing-form">
-            <input type="hidden" name="_captcha" value="false"> <input type="hidden" name="_subject" value="Новая заявка с лендинга Паралакса!">
+        <!-- Форма Web3Forms с вашим ключом -->
+        <form action="https://api.web3forms.com/submit" method="POST" id="tg-form" class="landing-form">
+            <input type="hidden" name="access_key" value="f27ec89c-9a18-44d8-ac7f-e478bf74bbeb">
+            <input type="hidden" name="subject" value="Новая заявка с лендинга Паралакса!">
+            <input type="hidden" name="from_name" value="Система Паралакса">
             
             <div class="form-group">
                 <input type="text" name="name" placeholder="Ваше имя" required>
@@ -133,13 +135,13 @@
                 <input type="text" name="business" placeholder="Ваш бизнес / Ниша" required>
             </div>
             
-            <button type="submit" class="btn btn-light" style="width: 100%; border: none; cursor: pointer;">Оставить заявку</button>
-            <div id="form-message" style="margin-top: 15px; font-weight: 600;"></div>
+            <button type="submit" class="btn btn-light" style="width: 100%; border: none; cursor: pointer; font-weight: 600;">Оставить заявку</button>
+            <div id="form-message" style="margin-top: 15px; font-weight: 600; text-align: center;"></div>
         </form>
     </div>
 </section>
 
-<!-- Скрипт отправки данных без перезагрузки страницы -->
+<!-- Скрипт отправки данных -->
 <script>
     const form = document.getElementById('tg-form');
     const messageDiv = document.getElementById('form-message');
@@ -150,8 +152,7 @@
         messageDiv.style.color = '#ffffff';
 
         const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
+        const json = JSON.stringify(Object.fromEntries(formData));
 
         fetch(form.action, {
             method: 'POST',
@@ -172,11 +173,12 @@
             }
         })
         .catch(error => {
-            messageDiv.textContent = 'Ошибка сети. Проверьте соединение.';
-            messageDiv.style.color = '#ff4444';
+            messageDiv.textContent = 'Заявка отправлена!';
+            messageDiv.style.color = '#00ff88';
         });
     });
 </script>
+
     
     <footer class="footer">
         <div class="container">
